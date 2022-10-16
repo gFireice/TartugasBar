@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarTargu.Class;
+using BarTargu.SqlBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,13 +25,15 @@ namespace BarTargu.WindowTar.PageTar
         public PageMenu()
         {
             InitializeComponent();
+            Filter();
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void Filter() 
         {
-
+            MenuListView.ItemsSource = AppData.Context.Product.ToList();
         }
 
+       
         private void FoodCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
             if(SearchCategoryFood.Visibility == Visibility.Visible)
@@ -44,8 +48,55 @@ namespace BarTargu.WindowTar.PageTar
 
         private void BasketBtn_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("WindowTar/PageTar/PageBascket.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
+
+            Class.NavigationController.MainFrame.Content = new PageCart();
+        }
+
+        private void MenuListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button) 
+            {
+                if (button.DataContext is Product addProduct) 
+                {
+                    addProduct.QuantityInCart++;
+                    AppData.Cart.Add(addProduct);
+                    //MessageBox.Show($"Блюдо {addProduct.Title} добавлено в корзину", "Меню", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Filter();
+                }
+            }
+        }
+
+        private void btnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                if (button.DataContext is Product product)
+                {
+                    product.QuantityInCart--;
+                    if (product.QuantityInCart == 0) 
+                    { 
+                        AppData.Cart.Remove(product);
+                    }
+                    Filter();
+                }
+            }
+        }
+
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                if (button.DataContext is Product product)
+                {
+                    product.QuantityInCart++;
+                }
+                Filter();
+            }
         }
     }
 }

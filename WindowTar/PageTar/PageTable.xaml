@@ -105,7 +105,7 @@
                         Grid.Row="1" 
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable1_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable2" 
                         Content="1"  
@@ -115,7 +115,7 @@
                         Grid.Row="2" 
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable2_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable3" 
                         Content="3"  
@@ -125,7 +125,7 @@
                         Grid.Row="3" 
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable3_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable4" 
                         Content="4"  
@@ -135,7 +135,7 @@
                         Grid.Row="4" 
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable4_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable5" 
                         Content="5"  
@@ -146,7 +146,7 @@
                         Grid.Column="1"
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable5_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable6" 
                         Content="6"  
@@ -157,7 +157,7 @@
                         Grid.Column="2"
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable6_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable7" 
                         Content="7"  
@@ -168,7 +168,7 @@
                         Grid.Column="3"
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable7_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable8" 
                         Content="8"  
@@ -179,7 +179,7 @@
                         Grid.Column="4" 
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable8_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable9" 
                         Content="9"  
@@ -190,7 +190,7 @@
                         Grid.Column="2"
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable9_Click">
+                        Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable10" 
                         Content="10"  
@@ -201,7 +201,7 @@
                         Grid.Column="4"
                         FontSize="24" 
                         BorderBrush="#00707070"
-                        Click="BtnTable10_Click">
+                        Click="BtnTable_Click">
                 </Button>
             </Grid>
            

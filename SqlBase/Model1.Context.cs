@@ -13,10 +13,10 @@ namespace BarTargu.SqlBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TartugasEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public TartugasEntities()
-            : base("name=TartugasEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     

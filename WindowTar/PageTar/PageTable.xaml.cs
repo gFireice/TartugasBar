@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarTargu.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,55 +27,17 @@ namespace BarTargu.WindowTar.PageTar
             InitializeComponent();
         }
 
-        private void BtnTable1_Click(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("WindowTar/PageTar/PageMenu.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
-        }
-
-        private void BtnTable3_Click(object sender, RoutedEventArgs e)
+        private void BtnTable_Click(object sender, RoutedEventArgs e)
         {
 
-        }
+            if (sender is Button button) 
+            {
+                AppData.SelectedTableNumber = Convert.ToInt32(button.Content);
+                Class.NavigationController.MainFrame.Content = NavigationController.StaticMenu;
+            }
 
-        private void BtnTable2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTable4_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTable5_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTable6_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTable7_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTable8_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTable9_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTable10_Click(object sender, RoutedEventArgs e)
-        {
-
+            //Uri uri = new Uri("WindowTar/PageTar/PageMenu.xaml", UriKind.Relative);
+            //this.NavigationService.Navigate(uri);
         }
     }
 }

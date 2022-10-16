@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BarTargu.WindowTar.PageTar;
 using BarTargu.WindowTar;
+using BarTargu.Class;
 
 
 namespace BarTargu.WindowTar
@@ -27,10 +28,11 @@ namespace BarTargu.WindowTar
             
             InitializeComponent();
            
-            Uri uri = new Uri("WindowTar/PageTar/PageBorder.xaml", UriKind.RelativeOrAbsolute);
+            //Uri uri = new Uri("WindowTar/PageTar/PageBorder.xaml", UriKind.RelativeOrAbsolute);
 
-            PageNavigate.NavigationService.Navigate(uri);
-            
+            //PageNavigate.NavigationService.Navigate(uri);
+            NavigationController.MainFrame = this.PageNavigate;
+            NavigationController.MainFrame.Content = new PageBorder();
         }
 
      

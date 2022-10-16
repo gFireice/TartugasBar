@@ -102,5 +102,5 @@ C:\Users\ya\Desktop\BarTargu\obj\Debug\BarTargu.csproj.CoreCompileInputs.cache
 C:\Users\ya\Desktop\BarTargu\obj\Debug\BarTargu.csproj.CopyComplete
 C:\Users\ya\Desktop\BarTargu\obj\Debug\BarTargu.exe
 C:\Users\ya\Desktop\BarTargu\obj\Debug\BarTargu.pdb
-C:\Users\ya\Desktop\BarTargu\obj\Debug\WindowTar\PageTar\PageBascket.g.cs
-C:\Users\ya\Desktop\BarTargu\obj\Debug\WindowTar\PageTar\PageBascket.baml
+C:\Users\ya\Desktop\BarTargu\obj\Debug\WindowTar\PageTar\PageCart.g.cs
+C:\Users\ya\Desktop\BarTargu\obj\Debug\WindowTar\PageTar\PageCart.baml
