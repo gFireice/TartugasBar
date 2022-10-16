@@ -217,7 +217,7 @@
             <RowDefinition Height="10*"/>
            
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
@@ -226,30 +226,39 @@
        
         <Border Grid.ColumnSpan="2" Background="#272727">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <Image
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
                Source="/Image/menutext.png"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
 
                 <Button Style="{DynamicResource ButtonStyleUP}"
-                Width="30" Height="30" 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Center" 
-                Margin="4,0,0,0" 
+              Grid.Column="0"
+              
+               Margin="10,3,10,3"
                 BorderBrush="#00707070" 
-                Foreground="#00000000"  >
+                Foreground="#00000000"
+                x:Name="FoodCategoryBtn"
+                        Click="FoodCategoryBtn_Click"
+                        >
                     <Button.Background>
                         <ImageBrush ImageSource="/Image/TripLine.png"/>
                     </Button.Background>
                 </Button>
 
                 <Button Style="{DynamicResource ButtonStyleUP}" Grid.ColumnSpan="2"
-                        Width="30"  Height="30"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Center"
-                        Margin="0,0,4,0"
+                     Grid.Column="2"
+                        Margin="10,3,10,3"
                         BorderBrush="#00707070"
-                        Foreground="#00000000"  >
+                        Foreground="#00000000" 
+                        x:Name="BasketBtn"
+                        Click="BasketBtn_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Image/basket.png">
                             
@@ -342,7 +351,7 @@
                                                 Content="-"
                                                 Margin="10 5 0 5"
                                                 Visibility="Hidden"
-                                                Background="#FFC8C8C8" BorderBrush="#00707070"
+                                                Background="#FFC8C8C8" BorderBrush="#FFC8C8C8"
                                                 >
                                             <Button.Effect>
                                                 <DropShadowEffect Color="#FF9A9A9A" Direction="1000"/>
@@ -352,7 +361,7 @@
                                                 Content="+"
                                                 Margin="0 5 10 5"
                                                 Visibility="Hidden"
-                                                Background="#FFC8C8C8" BorderBrush="#00707070"
+                                                Background="#FFC8C8C8" BorderBrush="#FFC8C8C8"
                                                 >
                                             <Button.Effect>
                                                 <DropShadowEffect Color="#FF9A9A9A" Direction="1000"/>
@@ -380,7 +389,9 @@
             </ListView.ItemTemplate>
         </ListView>
         
-        <ListView Visibility="Hidden" 
+        <ListView x:Name="SearchCategoryFood"
+            Visibility="Hidden" 
+                  BorderBrush="#272727"
                       Background="#272727"
                       Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"
                   >

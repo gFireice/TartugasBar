@@ -20,6 +20,7 @@ namespace BarTargu.WindowTar.PageTar
     /// </summary>
     public partial class PageTable : Page
     {
+        
         public PageTable()
         {
             InitializeComponent();
@@ -27,7 +28,8 @@ namespace BarTargu.WindowTar.PageTar
 
         private void BtnTable1_Click(object sender, RoutedEventArgs e)
         {
-
+            Uri uri = new Uri("WindowTar/PageTar/PageMenu.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void BtnTable3_Click(object sender, RoutedEventArgs e)

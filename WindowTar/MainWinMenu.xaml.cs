@@ -26,8 +26,11 @@ namespace BarTargu.WindowTar
         {
             
             InitializeComponent();
+           
             Uri uri = new Uri("WindowTar/PageTar/PageBorder.xaml", UriKind.RelativeOrAbsolute);
+
             PageNavigate.NavigationService.Navigate(uri);
+            
         }
 
      

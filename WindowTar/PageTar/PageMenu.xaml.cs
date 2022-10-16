@@ -29,5 +29,23 @@ namespace BarTargu.WindowTar.PageTar
         {
 
         }
+
+        private void FoodCategoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(SearchCategoryFood.Visibility == Visibility.Visible)
+            {
+                SearchCategoryFood.Visibility=Visibility.Hidden;
+            }
+            else
+            {
+                SearchCategoryFood.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void BasketBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("WindowTar/PageTar/PageBascket.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }

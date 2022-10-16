@@ -143,6 +143,9 @@
     <Compile Include="WindowTar\MainWinMenu.xaml.cs">
       <DependentUpon>MainWinMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowTar\PageTar\PageBascket.xaml.cs">
+      <DependentUpon>PageBascket.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowTar\PageTar\PageBorder.xaml.cs">
       <DependentUpon>PageBorder.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WindowTar\PageTar\PageBascket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowTar\PageTar\PageBorder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,6 +225,8 @@
     <Resource Include="Image\StartText.png" />
     <Resource Include="Image\TartugasText.png" />
     <Resource Include="Image\TableAddTextpng.png" />
+    <Resource Include="Image\ReturnBitton.png" />
+    <Resource Include="Image\BascketText.png" />
     <Content Include="SqlBase\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
