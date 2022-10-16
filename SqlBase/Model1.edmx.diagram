@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44b51cf19daf4678a8db0853e7c21d64" Name="Diagram1">
+        <EntityTypeShape EntityType="TartugasModel.Category" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TartugasModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TartugasModel.OrderProduct" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TartugasModel.Product" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TartugasModel.Staff" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TartugasModel.Status" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TartugasModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TartugasModel.Table" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="TartugasModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="TartugasModel.FK_Order_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="TartugasModel.FK_Order_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TartugasModel.FK_Order_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="TartugasModel.FK_OrderProduct_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TartugasModel.FK_OrderProduct_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

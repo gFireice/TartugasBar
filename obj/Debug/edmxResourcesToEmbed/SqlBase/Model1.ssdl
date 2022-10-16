@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище TartugasModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TotalCost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="TableNumID" Type="int" Nullable="false" />
+    <Property Name="StaffID" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderProduct">
+    <Key>
+      <PropertyRef Name="OrderProductID" />
+    </Key>
+    <Property Name="OrderProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="Compozition" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="Hit" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Patronomic" Type="nvarchar" MaxLength="100" />
+    <Property Name="BirthDay" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="TableNumID" />
+    </Key>
+    <Property Name="TableNumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Order_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Table">
+    <End Role="Table" Type="Self.Table" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table">
+        <PropertyRef Name="TableNumID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="TableNumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище TartugasModelContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Order_Staff" Association="Self.FK_Order_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Status" Association="Self.FK_Order_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Table" Association="Self.FK_Order_Table">
+      <End Role="Table" EntitySet="Table" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Order" Association="Self.FK_OrderProduct_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Product" Association="Self.FK_OrderProduct_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

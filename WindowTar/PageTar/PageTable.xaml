@@ -1,0 +1,211 @@
+﻿<Page x:Class="BarTargu.WindowTar.PageTar.PageTable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BarTargu.WindowTar.PageTar"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageTable">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#984D07"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#984D07"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"  Background="{TemplateBinding Background}" CornerRadius="24" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                           
+                           
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid Background="White">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#272727" Grid.ColumnSpan="3"></Border>
+        <Image Source="/Image/TableText.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+
+
+        <Border Grid.Row="2" Grid.Column="1" Background="#AE8E7B" CornerRadius="24,24,24,24" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+               
+                <Image Source="/Image/TableAddTextpng.png" Grid.ColumnSpan="3" Grid.Column="1" Margin="0,5,0,5"/>
+                <Button x:Name="BtnTable1" 
+                        Content="1"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="1" 
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable1_Click">
+                </Button>
+                <Button x:Name="BtnTable2" 
+                        Content="1"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="2" 
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable2_Click">
+                </Button>
+                <Button x:Name="BtnTable3" 
+                        Content="3"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="3" 
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable3_Click">
+                </Button>
+                <Button x:Name="BtnTable4" 
+                        Content="4"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="4" 
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable4_Click">
+                </Button>
+                <Button x:Name="BtnTable5" 
+                        Content="5"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable5_Click">
+                </Button>
+                <Button x:Name="BtnTable6" 
+                        Content="6"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable6_Click">
+                </Button>
+                <Button x:Name="BtnTable7" 
+                        Content="7"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable7_Click">
+                </Button>
+                <Button x:Name="BtnTable8" 
+                        Content="8"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="1"
+                        Grid.Column="4" 
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable8_Click">
+                </Button>
+                <Button x:Name="BtnTable9" 
+                        Content="9"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable9_Click">
+                </Button>
+                <Button x:Name="BtnTable10" 
+                        Content="10"  
+                        Background="#FFD87B25" 
+                        Style="{DynamicResource ButtonStyle1}" 
+                        Margin="10 5 10 5" 
+                        Grid.Row="2"
+                        Grid.Column="4"
+                        FontSize="24" 
+                        BorderBrush="#00707070"
+                        Click="BtnTable10_Click">
+                </Button>
+            </Grid>
+           
+        </Border>
+        
+    </Grid>
+</Page>
