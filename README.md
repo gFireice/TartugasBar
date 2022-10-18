@@ -27,5 +27,19 @@
 
 <p1>Связь</p1>
 ![Ssms_Vrkzv5jf9r](https://user-images.githubusercontent.com/80753741/196359924-0682d3bc-4a36-4670-9711-6856dc1073fe.png)
+<h1>Окна</h1>
+
+![изображение_2022-10-18_101543637](https://user-images.githubusercontent.com/80753741/196362003-20e12c4d-6a5c-466f-b67e-99ab5ca4d526.png)
+
+![изображение_2022-10-18_101631219](https://user-images.githubusercontent.com/80753741/196362201-c7b2e796-a5b3-4630-986e-a84dad6d13b9.png)
+
+![изображение_2022-10-18_101708767](https://user-images.githubusercontent.com/80753741/196362354-f01cdf92-61b3-459d-a24f-25b8ab0dccf5.png)
+
+![изображение_2022-10-18_101740619](https://user-images.githubusercontent.com/80753741/196362461-99e14c60-3576-46c0-abbe-f1d79715f433.png)
+
+
+<h1>Структура</h1>
+
+![изображение_2022-10-18_101838319](https://user-images.githubusercontent.com/80753741/196362703-a09a3460-23ae-4371-852c-8360f288971e.png)
 
 </body>
