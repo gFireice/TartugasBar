@@ -382,6 +382,17 @@
                         <DropShadowEffect Color="#FF9A9A9A" Direction="1000"/>
                     </Button.Effect>
                 </Button>
+                
+                <TextBlock Text="{Binding Cost}" 
+                           FontSize="24" 
+                           Foreground="White" 
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="Р" 
+                           FontSize="24" 
+                           Foreground="White" 
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"></TextBlock>
             </Grid>
 
         </Border>
