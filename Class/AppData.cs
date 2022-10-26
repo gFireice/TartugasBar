@@ -14,7 +14,5 @@ namespace BarTargu.Class
         public static int SelectedTableNumber { get; set; } 
 
         public static List<Product> Cart { get; set; } = new List<Product>();
-
-        public static List<Category> CategorieProduct { get; set; } = new List<Category>();
     }
 }

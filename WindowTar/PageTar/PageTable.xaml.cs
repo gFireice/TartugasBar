@@ -36,8 +36,6 @@ namespace BarTargu.WindowTar.PageTar
                 Class.NavigationController.MainFrame.Content = NavigationController.StaticMenu;
             }
 
-            //Uri uri = new Uri("WindowTar/PageTar/PageMenu.xaml", UriKind.Relative);
-            //this.NavigationService.Navigate(uri);
         }
     }
 }

@@ -37,8 +37,8 @@ namespace BarTargu.WindowTar.PageTar
         {
             MenuListView.ItemsSource = AppData.Context.Product.ToList();
         }
-
        
+
         private void FoodCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
             if(SearchCategoryFood.Visibility == Visibility.Visible)
