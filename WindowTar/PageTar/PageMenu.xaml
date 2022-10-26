@@ -314,7 +314,9 @@
 
 
         <ListView Style="{DynamicResource ListViewStyle1}" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="1"
-               d:ItemsSource="{d:SampleData ItemCount=2}" MouseDoubleClick="MenuListView_MouseDoubleClick" x:Name="MenuListView" SelectionChanged="MenuListView_SelectionChanged" >
+               d:ItemsSource="{d:SampleData ItemCount=2}" MouseDoubleClick="MenuListView_MouseDoubleClick"
+                  x:Name="MenuListView"
+                  SelectionChanged="MenuListView_SelectionChanged" >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel></StackPanel>
@@ -446,7 +448,7 @@
 
         <ListView x:Name="SearchCategoryFood"  Style="{DynamicResource ListViewStyle1}"
                     d:ItemsSource="{d:SampleData ItemCount=2}"
-            Visibility="Visible" 
+            Visibility="Hidden" 
                   BorderBrush="#272727"
                   Background="#272727"
                   Foreground="#272727"
@@ -484,7 +486,7 @@
                                         FontSize="20" 
                                         HorizontalAlignment="Left" 
                                         VerticalAlignment="Center" 
-                                        Text="{Binding Title}"
+                                        Text="{Binding NameCategory}"
                                         FontFamily="Kyiv*Type Serif"
                                         ></TextBlock>
                                 </Grid>

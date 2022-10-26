@@ -30,8 +30,7 @@ namespace BarTargu.WindowTar.PageTar
 
         private void NavigatTable_Click(object sender, RoutedEventArgs e)
         {
-        //    Uri uri = new Uri("WindowTar/PageTar/PageTable.xaml", UriKind.Relative);
-        //    this.NavigationService.Navigate(uri);
+        
 
             NavigationController.MainFrame.Content = new PageTable();
         }

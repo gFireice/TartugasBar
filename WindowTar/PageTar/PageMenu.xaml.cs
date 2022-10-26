@@ -26,8 +26,13 @@ namespace BarTargu.WindowTar.PageTar
         {
             InitializeComponent();
             Filter();
+            FilterCategory();
         }
 
+        public void FilterCategory()
+        {
+            SearchCategoryFood.ItemsSource = AppData.Context.Category.ToList();
+        }
         public void Filter() 
         {
             MenuListView.ItemsSource = AppData.Context.Product.ToList();
