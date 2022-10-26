@@ -250,6 +250,7 @@
     <Resource Include="Image\NoImage.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\Hit.png" />
     <Content Include="SqlBase\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
