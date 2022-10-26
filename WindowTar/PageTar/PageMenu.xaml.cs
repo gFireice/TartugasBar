@@ -65,7 +65,6 @@ namespace BarTargu.WindowTar.PageTar
                 {
                     addProduct.QuantityInCart++;
                     AppData.Cart.Add(addProduct);
-                    //MessageBox.Show($"Блюдо {addProduct.Title} добавлено в корзину", "Меню", MessageBoxButton.OK, MessageBoxImage.Information);
                     Filter();
                 }
             }
@@ -97,6 +96,12 @@ namespace BarTargu.WindowTar.PageTar
                 }
                 Filter();
             }
+        }
+
+        private void MenuListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+           WinDiscriptionFood winDiscriptionFood = new WinDiscriptionFood();
+            winDiscriptionFood.ShowDialog();
         }
     }
 }

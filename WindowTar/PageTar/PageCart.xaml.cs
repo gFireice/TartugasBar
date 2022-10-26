@@ -1,4 +1,4 @@
-﻿using BarTargu.Class;
+﻿ using BarTargu.Class;
 using BarTargu.SqlBase;
 using System;
 using System.Collections.Generic;

@@ -158,3 +158,5 @@ C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\BarTargu.csproj.CoreCompileInp
 C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\BarTargu.csproj.CopyComplete
 C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\BarTargu.exe
 C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\BarTargu.pdb
+C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\WindowTar\WinDiscriptionFood.g.cs
+C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\WindowTar\WinDiscriptionFood.baml

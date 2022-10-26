@@ -19,7 +19,7 @@ namespace BarTargu.WindowTar
     /// </summary>
     public partial class WinDiscriptionFood : Window
     {
-        public WinDiscriptionFood()
+        public WinDiscriptionFood(int id=0 )
         {
             InitializeComponent();
         }
