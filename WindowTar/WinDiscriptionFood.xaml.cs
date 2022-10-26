@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarTargu.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,10 @@ namespace BarTargu.WindowTar
     /// </summary>
     public partial class WinDiscriptionFood : Window
     {
-        public WinDiscriptionFood(int id=0 )
+        public WinDiscriptionFood( )
         {
             InitializeComponent();
+
         }
     }
 }

@@ -37,7 +37,10 @@ namespace BarTargu.WindowTar.PageTar
         {
             MenuListView.ItemsSource = AppData.Context.Product.ToList();
         }
-       
+        //public void Filter()
+        //{
+        //    MenuListView.ItemsSource = AppData.Context.Product.ToList();
+        //}
 
         private void FoodCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -111,7 +114,10 @@ namespace BarTargu.WindowTar.PageTar
 
         private void SearchCategoryFood_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            if (sender is Button button)
+            { 
+            
+            }
         }
     }
 }
