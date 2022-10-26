@@ -203,6 +203,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ImageFood\" />
     <Folder Include="Libary\" />
   </ItemGroup>
   <ItemGroup>

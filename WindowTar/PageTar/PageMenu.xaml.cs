@@ -103,5 +103,10 @@ namespace BarTargu.WindowTar.PageTar
            WinDiscriptionFood winDiscriptionFood = new WinDiscriptionFood();
             winDiscriptionFood.ShowDialog();
         }
+
+        private void SearchCategoryFood_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

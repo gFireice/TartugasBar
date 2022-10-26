@@ -209,6 +209,46 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
+        <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9"/>
+        <Style x:Key="ListViewStyle1" TargetType="{x:Type ListView}">
+            <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListView}">
+                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="1" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Border}"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsGrouping" Value="true"/>
+                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid Background="White">
@@ -273,7 +313,7 @@
 
 
 
-        <ListView Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="1"
+        <ListView Style="{DynamicResource ListViewStyle1}" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="1"
                d:ItemsSource="{d:SampleData ItemCount=2}" MouseDoubleClick="MenuListView_MouseDoubleClick" x:Name="MenuListView" SelectionChanged="MenuListView_SelectionChanged" >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -394,7 +434,7 @@
                                 </Grid>
                                 <Border  Margin="10 10 10 10" CornerRadius="12,12,12,12" >
                                     <Border.Background>
-                                        <ImageBrush ImageSource="/Image/Rectangle.png"/>
+                                        <ImageBrush ImageSource="/Image/NoImage.png"/>
                                     </Border.Background>
                                 </Border>
                             </Grid>
@@ -403,13 +443,81 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
-        <ListView x:Name="SearchCategoryFood"
-            Visibility="Hidden" 
+
+        <ListView x:Name="SearchCategoryFood"  Style="{DynamicResource ListViewStyle1}"
+                    d:ItemsSource="{d:SampleData ItemCount=2}"
+            Visibility="Visible" 
                   BorderBrush="#272727"
-                      Background="#272727"
+                  Background="#272727"
+                  Foreground="#272727"
+                MouseDoubleClick="SearchCategoryFood_MouseDoubleClick"
+                  
                       Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"
                   >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <Grid Width="170"
+                          Height="100" 
+                          Margin="10 10 10 10">
+                        <Border  Background="#DADADA" CornerRadius="12,12,12,12">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FF9A9A9A" Direction="1000"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.7*"/>
+                                   
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock 
+                                        x:Name="txtTitle"
+                                        FontSize="20" 
+                                        HorizontalAlignment="Left" 
+                                        VerticalAlignment="Center" 
+                                        Text="{Binding Title}"
+                                        FontFamily="Kyiv*Type Serif"
+                                        ></TextBlock>
+                                </Grid>
+                                <Grid Grid.Column="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                       
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                   
+
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                    </Grid>
+
+                                </Grid>
+                                <Border  Margin="10 10 10 10" CornerRadius="12,12,12,12" >
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/Image/NoImage.png"/>
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
         </ListView>
        
     </Grid>

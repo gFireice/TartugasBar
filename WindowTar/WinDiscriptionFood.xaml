@@ -44,13 +44,13 @@
                     Height="100"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
-                    Margin="10 10 0 0"
+                    Margin="0 10 0 0"
                     >
                         <Border.Background>
                             <ImageBrush ImageSource="/Image/NoImage.png"/>
                         </Border.Background>
                     </Border>
-                    <Border x:Name="HitFood"
+                    <Border Margin="-24,0,10,0" x:Name="HitFood"
                             Visibility="Visible" 
                             RenderTransformOrigin="0.5,0.5"    >
                         <Border.RenderTransform>
@@ -70,27 +70,36 @@
                 </Grid>
 
             </Border>
-            <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
-            <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
-                <TextBlock HorizontalAlignment="Right" Text="NameFood" x:Name="NameFood" FontSize="24"></TextBlock>
-                <TextBlock x:Name="CategoryFood" Text="{Binding NameCategory}" FontSize="8" Foreground="Gray" HorizontalAlignment="Right"></TextBlock>
-                <TextBlock HorizontalAlignment="Right" Margin="0 5 0 0" Text="{Binding Description}" x:Name="DescriptionFood"></TextBlock>
+            <Grid Grid.RowSpan="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel >
+                    <TextBlock HorizontalAlignment="Right" Text="NameFood" x:Name="NameFood" FontSize="24"></TextBlock>
+                    <TextBlock x:Name="CategoryFood" Text="{Binding NameCategory}" FontSize="8" Foreground="Gray" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0 5 0 0" Text="{Binding Description}" x:Name="DescriptionFood"></TextBlock>
 
-            </StackPanel>
+                </StackPanel>
 
-            <TextBlock Grid.Row="1"
+                <TextBlock Grid.Row="1"
                        Grid.Column="1" 
-                       Margin="0 0 5 5"
+                      
                 HorizontalAlignment="Right"
                        VerticalAlignment="Bottom"
                        Text="{Binding Cost}"
                        FontSize="20"
                        ></TextBlock>
+
+
+            </Grid>
+
+
             <StackPanel Grid.Row="1">
                 <TextBlock Text="Component" x:Name="ComponentFood" ></TextBlock>
                 <TextBlock Text="{Binding Weight}" x:Name="WeightFood" Margin="0 5 0 0" ></TextBlock>
             </StackPanel>
-            </StackPanel>
+
         </Grid>
     </Grid>
 </Window>
