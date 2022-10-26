@@ -158,6 +158,9 @@
     <Compile Include="WindowTar\PageTar\PageTable.xaml.cs">
       <DependentUpon>PageTable.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowTar\WinDiscriptionFood.xaml.cs">
+      <DependentUpon>WinDiscriptionFood.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -217,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WindowTar\WinDiscriptionFood.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Rectangle.png" />
@@ -234,6 +241,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\NoImage.png" />
     <Content Include="SqlBase\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
