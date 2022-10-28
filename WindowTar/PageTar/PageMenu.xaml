@@ -254,13 +254,13 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="9*"/>
            
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3.3*"/>
         </Grid.ColumnDefinitions>
        
        
@@ -448,7 +448,7 @@
 
         <ListView x:Name="SearchCategoryFood"  Style="{DynamicResource ListViewStyle1}"
                     d:ItemsSource="{d:SampleData ItemCount=2}"
-            Visibility="Hidden" 
+            Visibility="Visible" 
                   BorderBrush="#272727"
                   Background="#272727"
                   Foreground="#272727"
@@ -463,33 +463,32 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate >
                 <DataTemplate>
-                    <Grid Width="170"
-                          Height="100" 
+                    <Grid Width="150"
+                          Height="130" 
                           Margin="10 10 10 10">
                         <Border  Background="#DADADA" CornerRadius="12,12,12,12">
                             <Border.Effect>
                                 <DropShadowEffect Color="#FF9A9A9A" Direction="1000"/>
                             </Border.Effect>
                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="0.7*"/>
-                                   
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="1">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="4*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                               
+                                
                                     <TextBlock 
+                                        HorizontalAlignment="Center"
+                                        Grid.Row="1"
                                         x:Name="txtTitle"
-                                        FontSize="20" 
-                                        HorizontalAlignment="Left" 
+                                        FontSize="20
+                                        " 
+                                       
                                         VerticalAlignment="Center" 
                                         Text="{Binding NameCategory}"
                                         FontFamily="Kyiv*Type Serif"
                                         ></TextBlock>
-                                </Grid>
+                             
                                 <Grid Grid.Column="3">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
