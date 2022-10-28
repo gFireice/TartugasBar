@@ -6,9 +6,13 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:BarTargu"
         mc:Ignorable="d"
-        Title="MainWinMenu" Height="450" Width="800">
+        Title="MainWinMenu" 
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen">
+        
     <Grid>
-        <Frame x:Name="PageNavigate"> 
+        <Frame x:Name="PageNavigate" NavigationUIVisibility="Hidden"> 
         </Frame>
     </Grid>
 </Window>
