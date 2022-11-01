@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BarTargu.WindowTar"
         mc:Ignorable="d"
         Title="WinDiscriptionFood"  Height="300" Width="450" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#272727"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10*"/>
@@ -76,15 +76,17 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <StackPanel >
-                    <TextBlock HorizontalAlignment="Right" Text="NameFood" x:Name="NameFood" FontSize="24"></TextBlock>
-                    <TextBlock x:Name="CategoryFood" Text="{Binding NameCategory}" FontSize="8" Foreground="Gray" HorizontalAlignment="Right"></TextBlock>
-                    <TextBlock HorizontalAlignment="Right" Margin="0 5 0 0" Text="{Binding Description}" x:Name="DescriptionFood"></TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding Title}" x:Name="NameFood" FontSize="24"></TextBlock>
+                    <TextBlock Foreground="White" x:Name="CategoryFood" Text="{Binding CategoryID}" FontSize="8"  HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Right" TextWrapping="Wrap" Margin="0 5 0 0" Text="{Binding Description}" x:Name="DescriptionFood"></TextBlock>
 
                 </StackPanel>
 
-                <TextBlock Grid.Row="1"
+                <TextBlock
+                    Foreground="White"
+                    Grid.Row="1"
                        Grid.Column="1" 
-                      
+                     x:Name="CostFood" 
                 HorizontalAlignment="Right"
                        VerticalAlignment="Bottom"
                        Text="{Binding Cost}"
@@ -96,8 +98,8 @@
 
 
             <StackPanel Grid.Row="1">
-                <TextBlock Text="Component" x:Name="ComponentFood" ></TextBlock>
-                <TextBlock Text="{Binding Weight}" x:Name="WeightFood" Margin="0 5 0 0" ></TextBlock>
+                <TextBlock Foreground="White" Text="{Binding Compozition}" TextWrapping="Wrap" x:Name="ComponentFood" ></TextBlock>
+                <TextBlock Foreground="White" Text="{Binding Weight}" x:Name="WeightFood" Margin="0 5 0 0" ></TextBlock>
             </StackPanel>
 
         </Grid>

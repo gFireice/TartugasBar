@@ -1,4 +1,5 @@
 ﻿using BarTargu.Class;
+using BarTargu.SqlBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,17 @@ namespace BarTargu.WindowTar
     /// </summary>
     public partial class WinDiscriptionFood : Window
     {
-        public WinDiscriptionFood( )
+        public WinDiscriptionFood(int MenuID)
         {
             InitializeComponent();
-
+            List<SqlBase.Product> products = AppData.Context.Product.ToList();
+            products = products.Where(x => x.ProductID == MenuID).ToList();
+            NameFood.DataContext = products;
+            ComponentFood.DataContext=products;
+            WeightFood.DataContext = products;
+            DescriptionFood.DataContext = products;
+            CategoryFood.DataContext = products;
+            CostFood.DataContext = products;   
         }
     }
 }

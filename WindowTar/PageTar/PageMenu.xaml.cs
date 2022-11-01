@@ -37,13 +37,11 @@ namespace BarTargu.WindowTar.PageTar
         {
             MenuListView.ItemsSource = AppData.Context.Product.ToList();
         }
-        public void Filter(int i)
+        public void Filter(int selectedCategory)
         {
-          List<SqlBase.Product> products = AppData.Context.Product.ToList();
-            products = products.OrderBy(i => i.CategoryID).ToList();
-
-            
-
+            List<SqlBase.Product> products = AppData.Context.Product.ToList();
+            products = products.Where(i => i.CategoryID == selectedCategory).ToList();
+            MenuListView.ItemsSource = products.ToList();
         }
 
         private void FoodCategoryBtn_Click(object sender, RoutedEventArgs e)
@@ -110,17 +108,36 @@ namespace BarTargu.WindowTar.PageTar
             }
         }
 
-        private void MenuListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+      
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-           WinDiscriptionFood winDiscriptionFood = new WinDiscriptionFood();
-            winDiscriptionFood.ShowDialog();
+            if (sender is Grid grid) 
+            {
+                if (grid.DataContext is Category selectedCategory) 
+                {
+                    Filter(selectedCategory.CategoryID);
+                }
+            }
         }
 
-        private void SearchCategoryFood_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+      
+
+        private void FoodCategoryBtn_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-           
-            Filter(1);
-            
+            Filter();
+        }
+
+        private void Grid_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Grid grid)
+            {
+                if (grid.DataContext is Product selectProduct)
+                {
+                    WinDiscriptionFood winDiscriptionFood = new WinDiscriptionFood(selectProduct.ProductID);
+                    winDiscriptionFood.ShowDialog();
+                }
+            }
         }
     }
 }
