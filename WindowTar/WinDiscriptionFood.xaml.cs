@@ -31,7 +31,8 @@ namespace BarTargu.WindowTar
             WeightFood.DataContext = products;
             DescriptionFood.DataContext = products;
             CategoryFood.DataContext = products;
-            CostFood.DataContext = products;   
+            CostFood.DataContext = products;
+            
         }
     }
 }
