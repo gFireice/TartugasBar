@@ -84,7 +84,7 @@
                     </TextBlock>
                     <TextBlock Foreground="White"
                                x:Name="CategoryFood"
-                               Text="{Binding CategoryID}"
+                               Text="{Binding NameCategory}"
                                FontSize="8"
                                HorizontalAlignment="Right">
                     </TextBlock>

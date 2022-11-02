@@ -134,7 +134,7 @@ namespace BarTargu.WindowTar.PageTar
             {
                 if (grid.DataContext is Product selectProduct)
                 {
-                    WinDiscriptionFood winDiscriptionFood = new WinDiscriptionFood(selectProduct.ProductID);
+                    WinDiscriptionFood winDiscriptionFood = new WinDiscriptionFood(selectProduct.ProductID, selectProduct);
                     winDiscriptionFood.ShowDialog();
                 }
             }

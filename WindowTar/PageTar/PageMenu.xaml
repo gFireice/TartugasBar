@@ -447,7 +447,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView x:Name="SearchCategoryFood"  Style="{DynamicResource ListViewStyle1}"
+        <ListView Opacity="10" x:Name="SearchCategoryFood"  Style="{DynamicResource ListViewStyle1}"
                     d:ItemsSource="{d:SampleData ItemCount=2}"
             Visibility="Visible" 
                   BorderBrush="#272727"
