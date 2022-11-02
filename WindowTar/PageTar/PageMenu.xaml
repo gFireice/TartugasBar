@@ -449,7 +449,7 @@
 
         <ListView x:Name="SearchCategoryFood"  Style="{DynamicResource ListViewStyle1}"
                     d:ItemsSource="{d:SampleData ItemCount=2}"
-            Visibility="Hidden" 
+            Visibility="Visible" 
                   BorderBrush="#272727"
                   Background="#272727"
                   Foreground="#272727"
@@ -510,7 +510,7 @@
                                 </Grid>
                                 <Border  Margin="10 10 10 10" CornerRadius="12,12,12,12" >
                                     <Border.Background>
-                                        <ImageBrush ImageSource="/Image/NoImage.png"/>
+                                        <ImageBrush ImageSource="{Binding ImageCategory}"/>
                                     </Border.Background>
                                 </Border>
                             </Grid>
