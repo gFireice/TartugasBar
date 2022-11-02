@@ -387,7 +387,8 @@
                            FontSize="24" 
                            Foreground="White" 
                            HorizontalAlignment="Right"
-                           VerticalAlignment="Center"></TextBlock>
+                           VerticalAlignment="Center"
+                           x:Name="CartCostAll"></TextBlock>
                 <TextBlock Text="Р" 
                            FontSize="24" 
                            Foreground="White" 

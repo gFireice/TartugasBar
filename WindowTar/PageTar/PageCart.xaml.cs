@@ -26,6 +26,7 @@ namespace BarTargu.WindowTar.PageTar
         {
             InitializeComponent();
             Filter();
+
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
