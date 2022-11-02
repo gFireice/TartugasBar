@@ -355,9 +355,9 @@
                                     </Grid>
 
                                 </Grid>
-                                <Border  Margin="10 10 10 10" CornerRadius="12,12,12,12" >
+                                <Border x:Name="ImageProductFood" Margin="10 10 10 10" CornerRadius="12,12,12,12" >
                                     <Border.Background>
-                                        <ImageBrush ImageSource="/Image/Rectangle.png"/>
+                                        <ImageBrush ImageSource="/Image/NoImage.png"/>
                                     </Border.Background>
                                 </Border>
                             </Grid>

@@ -204,7 +204,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ImageFood\" />
     <Folder Include="Libary\" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +252,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Hit.png" />
+    <Resource Include="ImageProductCategory\Mohito.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageProductCategory\sup.jpg" />
+    <Resource Include="ImageProductCategory\Salat.jpg" />
+    <Resource Include="ImageProductCategory\Desert.jpg" />
+    <Resource Include="ImageProductCategory\Beef.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SqlBase\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

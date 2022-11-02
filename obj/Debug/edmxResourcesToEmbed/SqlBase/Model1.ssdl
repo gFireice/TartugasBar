@@ -6,6 +6,7 @@
     </Key>
     <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NameCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImageCategory" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -39,6 +40,7 @@
     <Property Name="CategoryID" Type="int" Nullable="false" />
     <Property Name="Hit" Type="bit" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImageProduct" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>

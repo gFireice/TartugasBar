@@ -6,6 +6,7 @@
         <MappingFragment StoreEntitySet="Category">
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="NameCategory" ColumnName="NameCategory" />
+          <ScalarProperty Name="ImageCategory" ColumnName="ImageCategory" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -42,6 +43,7 @@
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="Hit" ColumnName="Hit" />
           <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ImageProduct" ColumnName="ImageProduct" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
