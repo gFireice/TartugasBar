@@ -343,6 +343,7 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <TextBlock 
                                         x:Name="txtTitle"
@@ -359,7 +360,18 @@
                                         HorizontalAlignment="Left" 
                                         VerticalAlignment="Top" 
                                         Margin="0 10 0 0"
+                                        TextWrapping="Wrap"
                                         Text="{Binding Description}"
+                                        FontFamily="Kyiv*Type Serif"
+                                        ></TextBlock>
+                                    <TextBlock 
+                                        x:Name="txtCaategory"
+                                        Grid.Row="3"
+                                        FontSize="12" 
+                                        HorizontalAlignment="Left" 
+                                        VerticalAlignment="Top" 
+                                        Margin="0 10 0 0"
+                                        Text="{Binding Category.Categories}"
                                         FontFamily="Kyiv*Type Serif"
                                         ></TextBlock>
                                 </Grid>
@@ -450,7 +462,7 @@
 
         <ListView Opacity="10" x:Name="SearchCategoryFood"  Style="{DynamicResource ListViewStyle1}"
                     d:ItemsSource="{d:SampleData ItemCount=2}"
-            Visibility="Visible" 
+            Visibility="Hidden" 
                   BorderBrush="#272727"
                   Background="#272727"
                   Foreground="#272727"

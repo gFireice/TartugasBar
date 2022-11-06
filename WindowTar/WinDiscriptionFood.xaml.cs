@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BarTargu.SqlBase;
 
+
 namespace BarTargu.WindowTar
 {
     /// <summary>
@@ -26,19 +27,27 @@ namespace BarTargu.WindowTar
         {
             InitializeComponent();
             List<SqlBase.Product> products = AppData.Context.Product.ToList();
-            List<SqlBase.Category> categories = AppData.Context.Category.ToList();
+            
             products = products.Where(x => x.ProductID == MenuID).ToList();
             NameFood.DataContext = products;
             ComponentFood.DataContext=products;
             WeightFood.DataContext = products;
             DescriptionFood.DataContext = products;
-            CategoryFood.DataContext = categories;
+            
             CostFood.DataContext = products;
            
             if(product.Hit==true)
             {
                 HitFood.Visibility=Visibility.Visible;
             }
+            else
+            {
+                HitFood.Visibility=Visibility.Hidden;
+            }
+
+
+
+            //CategoryFood.DataContext = 
         }
     }
 }

@@ -9,6 +9,14 @@ namespace BarTargu.SqlBase
 {
     public partial class Product
     {
+
+        public List<Category> Categories
+        {
+            get
+            {
+                return Categories.ToList();
+            }
+        }
         public int QuantityInCart { get; set; }
 
         public string InCart 

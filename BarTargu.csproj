@@ -132,12 +132,6 @@
     <Compile Include="SqlBase\Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SqlBase\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SqlBase\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="SqlBase\Staff.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
