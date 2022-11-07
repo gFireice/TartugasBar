@@ -44,21 +44,6 @@ namespace BarTargu.SqlBase
             }
         }
 
-        public decimal AllCost
-        {
-            get
-            {
-                decimal allCost=0;
-
-
-                foreach(SqlBase.Product product in AppData.Cart)
-                {
-                    allCost += product.Cost;
-                }
-
-                return allCost;
-            }
-        }
 
         
     }

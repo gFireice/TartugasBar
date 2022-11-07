@@ -22,6 +22,8 @@ namespace BarTargu.WindowTar.PageTar
     /// </summary>
     public partial class PageCart : Page
     {
+
+        public decimal allCost = 0;
         public PageCart()
         {
             InitializeComponent();
@@ -37,6 +39,16 @@ namespace BarTargu.WindowTar.PageTar
         public void Filter() 
         {
             CartListView.ItemsSource = AppData.Cart.ToList();
+
+
+            
+            foreach (SqlBase.Product product in AppData.Cart)
+            {
+
+                allCost += product.Cost;
+            }
+            CartCostAll.Text = allCost.ToString();
+            
         }
 
         private void btnBackToMenu_Click(object sender, RoutedEventArgs e)
