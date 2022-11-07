@@ -383,7 +383,8 @@
                         <DropShadowEffect Color="#FF9A9A9A" Direction="1000"/>
                     </Button.Effect>
                 </Button>
-                
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right"
+                           VerticalAlignment="Center">
                 <TextBlock Text="" 
                            FontSize="24" 
                            Foreground="White" 
@@ -395,6 +396,7 @@
                            Foreground="White" 
                            HorizontalAlignment="Right"
                            VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
             </Grid>
 
         </Border>

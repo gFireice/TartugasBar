@@ -36,19 +36,19 @@ namespace BarTargu.WindowTar.PageTar
 
         }
 
-        public void Filter() 
+        public void Filter()
         {
             CartListView.ItemsSource = AppData.Cart.ToList();
 
 
-            
+            allCost = 0;
             foreach (SqlBase.Product product in AppData.Cart)
             {
 
-                allCost += product.Cost;
+                allCost += product.Cost * product.QuantityInCart;
             }
             CartCostAll.Text = allCost.ToString();
-            
+
         }
 
         private void btnBackToMenu_Click(object sender, RoutedEventArgs e)
@@ -87,7 +87,45 @@ namespace BarTargu.WindowTar.PageTar
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             
+
+
+            SqlBase.OrderProduct orderProduct= new OrderProduct();
+            Random random = new Random();
+            SqlBase.Order order= new SqlBase.Order();
+            try
+            {
+                order.TotalCost = allCost;
+                order.TableNumID = AppData.SelectedTableNumber;
+                order.StaffID = random.Next(1, 5);
+                order.StatusID = 1;
+                AppData.Context.Order.Add(order);
+                AppData.Context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+
+
+            foreach (SqlBase.Product product in AppData.Cart)
+            {
+                for (int i = 0; i < product.QuantityInCart; i++)
+                {
+                    try
+                    {
+                        orderProduct.OrderID = order.OrderID;
+                        orderProduct.ProductID = product.ProductID;
+                        AppData.Context.OrderProduct.Add(orderProduct);
+                        AppData.Context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }
+            }
         }
     }
 }
