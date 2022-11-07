@@ -88,12 +88,12 @@ namespace BarTargu.WindowTar.PageTar
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            
 
 
-            SqlBase.OrderProduct orderProduct= new OrderProduct();
+
+            SqlBase.OrderProduct orderProduct = new OrderProduct();
             Random random = new Random();
-            SqlBase.Order order= new SqlBase.Order();
+            SqlBase.Order order = new SqlBase.Order();
             try
             {
                 order.TotalCost = allCost;
@@ -111,21 +111,23 @@ namespace BarTargu.WindowTar.PageTar
 
             foreach (SqlBase.Product product in AppData.Cart)
             {
-                for (int i = 0; i < product.QuantityInCart; i++)
+
+                try
                 {
-                    try
-                    {
-                        orderProduct.OrderID = order.OrderID;
-                        orderProduct.ProductID = product.ProductID;
-                        AppData.Context.OrderProduct.Add(orderProduct);
-                        AppData.Context.SaveChanges();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString());
-                    }
+                    orderProduct.OrderID = order.OrderID;
+                    orderProduct.ProductID = product.ProductID;
+                    orderProduct.Count = product.QuantityInCart;
+                    AppData.Context.OrderProduct.Add(orderProduct);
+                    AppData.Context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
                 }
             }
         }
+    
+           
+          
     }
 }
