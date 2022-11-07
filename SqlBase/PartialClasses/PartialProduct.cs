@@ -1,4 +1,5 @@
-﻿using ExCSS;
+﻿using BarTargu.Class;
+using ExCSS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,7 @@ namespace BarTargu.SqlBase
     public partial class Product
     {
 
-        public List<Category> Categories
-        {
-            get
-            {
-                return Categories.ToList();
-            }
-        }
+      
         public int QuantityInCart { get; set; }
 
         public string InCart 
@@ -46,6 +41,22 @@ namespace BarTargu.SqlBase
                 {
                     return "Hidden";
                 }
+            }
+        }
+
+        public decimal AllCost
+        {
+            get
+            {
+                decimal allCost=0;
+
+
+                foreach(SqlBase.Product product in AppData.Cart)
+                {
+                    allCost += product.Cost;
+                }
+
+                return allCost;
             }
         }
 

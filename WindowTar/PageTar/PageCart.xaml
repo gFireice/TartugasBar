@@ -384,7 +384,7 @@
                     </Button.Effect>
                 </Button>
                 
-                <TextBlock Text="{Binding Cost}" 
+                <TextBlock Text="{Binding AllCost}" 
                            FontSize="24" 
                            Foreground="White" 
                            HorizontalAlignment="Right"

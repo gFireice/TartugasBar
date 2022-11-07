@@ -45,7 +45,7 @@ namespace BarTargu.WindowTar
                 HitFood.Visibility=Visibility.Hidden;
             }
             FotoFood.DataContext =products;
-
+            CategoryFood.DataContext = products;
 
             //CategoryFood.DataContext = 
         }

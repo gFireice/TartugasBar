@@ -81,14 +81,16 @@
                                HorizontalAlignment="Right"
                                Text="{Binding Title}"
                                x:Name="NameFood"
+                               TextWrapping="Wrap"
                                FontSize="24">
                     </TextBlock>
                     <TextBlock Foreground="White"
                                x:Name="CategoryFood"
-                               Text="{Binding NameCategory}"
+                               Text="{Binding Category.NameCategory}"
                                FontSize="8"
                                HorizontalAlignment="Right">
                     </TextBlock>
+                    
                     <TextBlock Foreground="White"
                                HorizontalAlignment="Right"
                                TextWrapping="Wrap"
