@@ -25,7 +25,7 @@
     <Property Name="OrderProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="int" Nullable="false" />
     <Property Name="ProductID" Type="int" Nullable="false" />
-    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="CountProduct" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Product">
     <Key>

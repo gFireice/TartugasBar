@@ -116,7 +116,7 @@ namespace BarTargu.WindowTar.PageTar
                 {
                     orderProduct.OrderID = order.OrderID;
                     orderProduct.ProductID = product.ProductID;
-                    orderProduct.Count = product.QuantityInCart;
+                    orderProduct.CountProduct = product.QuantityInCart;
                     AppData.Context.OrderProduct.Add(orderProduct);
                     AppData.Context.SaveChanges();
                 }
@@ -126,7 +126,7 @@ namespace BarTargu.WindowTar.PageTar
                 }
             }
         }
-    
+        
            
           
     }
