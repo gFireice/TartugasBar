@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -49,8 +50,10 @@ namespace BarTargu.WindowTar.PageTar
                 allCost += (product.Cost - (product.Discount* product.Cost)) * product.QuantityInCart;
                 
             }
+
+          
             var cal = new GregorianCalendar();
-            if(cal.GetWeekOfYear(DateTime.Today, CalendarWeekRule.FirstFullWeek, DayOfWeek.Monday)%5 == 0)
+            if (cal.GetDayOfMonth(DateTime.Today)% 5 == 0)
             {
                
                 allCost =Math.Round(allCost-(allCost * 0.11M),2);
@@ -68,7 +71,7 @@ namespace BarTargu.WindowTar.PageTar
 
         private void btnMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button button)
+            if (sender is System.Windows.Controls.Button button)
             {
                 if (button.DataContext is Product product)
                 {
@@ -84,7 +87,7 @@ namespace BarTargu.WindowTar.PageTar
 
         private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button button)
+            if (sender is System.Windows.Controls.Button button)
             {
                 if (button.DataContext is Product product)
                 {
