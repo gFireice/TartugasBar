@@ -51,9 +51,7 @@ namespace BarTargu.WindowTar.PageTar
                 
             }
 
-          
-            var cal = new GregorianCalendar();
-            if (cal.GetDayOfMonth(DateTime.Today)% 5 == 0)
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday && ((DateTime.Now.Day - 1) / 7 + 1) == 5)
             {
                
                 allCost =Math.Round(allCost-(allCost * 0.11M),2);
