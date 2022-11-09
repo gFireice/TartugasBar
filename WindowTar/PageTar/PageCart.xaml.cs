@@ -100,6 +100,7 @@ namespace BarTargu.WindowTar.PageTar
 
 
             SqlBase.OrderProduct orderProduct = new OrderProduct();
+            
             Random random = new Random();
             SqlBase.Order order = new SqlBase.Order();
             try
@@ -108,6 +109,7 @@ namespace BarTargu.WindowTar.PageTar
                 order.TableNumID = AppData.SelectedTableNumber;
                 order.StaffID = random.Next(1, 5);
                 order.StatusID = 1;
+                
                 AppData.Context.Order.Add(order);
                 AppData.Context.SaveChanges();
             }
@@ -122,6 +124,7 @@ namespace BarTargu.WindowTar.PageTar
 
                 try
                 {
+                    
                     orderProduct.OrderID = order.OrderID;
                     orderProduct.ProductID = product.ProductID;
                     orderProduct.CountProduct = product.QuantityInCart;
