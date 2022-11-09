@@ -45,7 +45,15 @@ namespace BarTargu.WindowTar.PageTar
             foreach (SqlBase.Product product in AppData.Cart)
             {
 
-                allCost += product.Cost * product.QuantityInCart;
+                allCost += (product.Cost - (product.Discount* product.Cost)) * product.QuantityInCart;
+                
+            }
+
+            if(DateTime.Today.DayOfWeek== DayOfWeek.Wednesday)
+            {
+               
+                allCost =Math.Round( allCost-( allCost * 0.11M),2);
+                WhiteDay.Visibility= Visibility.Visible;
             }
             CartCostAll.Text = allCost.ToString();
 
