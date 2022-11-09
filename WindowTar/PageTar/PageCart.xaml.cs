@@ -2,6 +2,7 @@
 using BarTargu.SqlBase;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,8 +49,8 @@ namespace BarTargu.WindowTar.PageTar
                 allCost += (product.Cost - (product.Discount* product.Cost)) * product.QuantityInCart;
                 
             }
-
-            if(DateTime.Today.DayOfWeek== DayOfWeek.Wednesday)
+            var cal = new GregorianCalendar();
+            if(cal.GetWeekOfYear(DateTime.Today, CalendarWeekRule.FirstFullWeek, DayOfWeek.Monday)%5 == 0)
             {
                
                 allCost =Math.Round(allCost-(allCost * 0.11M),2);
@@ -109,7 +110,6 @@ namespace BarTargu.WindowTar.PageTar
                 order.TableNumID = AppData.SelectedTableNumber;
                 order.StaffID = random.Next(1, 5);
                 order.StatusID = 1;
-                
                 AppData.Context.Order.Add(order);
                 AppData.Context.SaveChanges();
             }
@@ -123,8 +123,7 @@ namespace BarTargu.WindowTar.PageTar
             {
 
                 try
-                {
-                    
+                {                    
                     orderProduct.OrderID = order.OrderID;
                     orderProduct.ProductID = product.ProductID;
                     orderProduct.CountProduct = product.QuantityInCart;
