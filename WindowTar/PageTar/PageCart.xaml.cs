@@ -52,7 +52,7 @@ namespace BarTargu.WindowTar.PageTar
             if(DateTime.Today.DayOfWeek== DayOfWeek.Wednesday)
             {
                
-                allCost =Math.Round( allCost-( allCost * 0.11M),2);
+                allCost =Math.Round(allCost-(allCost * 0.11M),2);
                 WhiteDay.Visibility= Visibility.Visible;
             }
             CartCostAll.Text = allCost.ToString();

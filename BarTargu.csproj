@@ -149,6 +149,9 @@
     <Compile Include="SqlBase\Table.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WindowTar\CheckList.xaml.cs">
+      <DependentUpon>CheckList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowTar\MainWinMenu.xaml.cs">
       <DependentUpon>MainWinMenu.xaml</DependentUpon>
     </Compile>
@@ -206,6 +209,10 @@
     <Folder Include="Libary\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="WindowTar\CheckList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowTar\MainWinMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
