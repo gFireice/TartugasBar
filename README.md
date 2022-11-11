@@ -33,10 +33,13 @@
 
 ![изображение_2022-10-18_101631219](https://user-images.githubusercontent.com/80753741/196362201-c7b2e796-a5b3-4630-986e-a84dad6d13b9.png)
 
-![изображение_2022-10-18_101708767](https://user-images.githubusercontent.com/80753741/196362354-f01cdf92-61b3-459d-a24f-25b8ab0dccf5.png)
+![image](https://user-images.githubusercontent.com/80753741/201314241-df53a1ad-c077-42e9-9069-20313ec569aa.png)
 
-![изображение_2022-10-18_101740619](https://user-images.githubusercontent.com/80753741/196362461-99e14c60-3576-46c0-abbe-f1d79715f433.png)
+![image](https://user-images.githubusercontent.com/80753741/201314365-7d7c22a1-e6d6-45c5-95a4-b2bc854973ad.png)
 
+![image](https://user-images.githubusercontent.com/80753741/201314501-10c819c0-ac64-41ef-9832-a1f9f6b67446.png)
+
+![image](https://user-images.githubusercontent.com/80753741/201314553-c504010f-23de-465b-a28a-97413ff7c261.png)
 
 <h1>Структура</h1>
 
