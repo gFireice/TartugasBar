@@ -108,7 +108,7 @@
                         Click="BtnTable_Click">
                 </Button>
                 <Button x:Name="BtnTable2" 
-                        Content="1"  
+                        Content="2"  
                         Background="#FFD87B25" 
                         Style="{DynamicResource ButtonStyle1}" 
                         Margin="10 5 10 5" 

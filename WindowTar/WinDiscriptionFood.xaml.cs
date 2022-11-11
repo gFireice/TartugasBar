@@ -36,7 +36,7 @@ namespace BarTargu.WindowTar
             
             CostFood.DataContext = products;
            
-            if(product.Hit==true)
+            if (product.Hit==true)
             {
                 HitFood.Visibility=Visibility.Visible;
             }
