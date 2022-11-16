@@ -47,7 +47,7 @@ namespace BarTargu.WindowTar
             FotoFood.DataContext =products;
             CategoryFood.DataContext = products;
 
-            //CategoryFood.DataContext = 
+            CategoryFood.DataContext =product;
         }
     }
 }
