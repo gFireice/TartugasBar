@@ -113,8 +113,7 @@ namespace BarTargu.WindowTar.PageTar
                     order.TotalCost = allCost;
                     order.TableNumID = AppData.SelectedTableNumber;
                     order.StaffID = random.Next(1, 5);
-                int a = 1;
-                    order.Status =a;
+                     order.StatusID =1;
                     AppData.Context.Order.Add(order);
                     AppData.Context.SaveChanges();
                 //}
