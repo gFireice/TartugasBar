@@ -218,3 +218,5 @@ C:\Users\ya\Source\Repos\TartugasBar\obj\Debug\BarTargu.exe
 C:\Users\ya\Source\Repos\TartugasBar\obj\Debug\BarTargu.pdb
 C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\WindowTar\CheckList.g.cs
 C:\Users\IMac3\Source\Repos\TartugasBar\obj\Debug\WindowTar\CheckList.baml
+C:\Users\ya\Source\Repos\TartugasBar\obj\Debug\WindowTar\CheckList.g.cs
+C:\Users\ya\Source\Repos\TartugasBar\obj\Debug\WindowTar\CheckList.baml

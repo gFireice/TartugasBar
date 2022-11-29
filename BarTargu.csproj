@@ -102,6 +102,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Class\AppData.cs" />
+    <Compile Include="Class\MathData.cs" />
     <Compile Include="Class\NavigationController.cs" />
     <Compile Include="SqlBase\Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>

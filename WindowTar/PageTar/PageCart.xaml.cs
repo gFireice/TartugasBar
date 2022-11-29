@@ -26,6 +26,7 @@ namespace BarTargu.WindowTar.PageTar
     {
 
         public decimal allCost = 0;
+        public decimal AllCostSunday = 0;
         public PageCart()
         {
             InitializeComponent();
@@ -41,23 +42,22 @@ namespace BarTargu.WindowTar.PageTar
         public void Filter()
         {
             CartListView.ItemsSource = AppData.Cart.ToList();
-
+            
 
             allCost = 0;
+            AllCostSunday = 0;
             foreach (SqlBase.Product product in AppData.Cart)
             {
 
                 allCost += (product.Cost - (product.Discount* product.Cost)) * product.QuantityInCart;
                 
             }
-
-            if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday && ((DateTime.Now.Day - 1) / 7 + 1) == 5)
+            AllCostSunday = MathData.MathSunday(allCost);
+            if (allCost > AllCostSunday)
             {
-               
-                allCost =Math.Round(allCost-(allCost * 0.11M),2);
-                WhiteDay.Visibility= Visibility.Visible;
+                WhiteDay.Visibility = Visibility.Visible;
             }
-            CartCostAll.Text = allCost.ToString();
+            CartCostAll.Text =Convert.ToString(AllCostSunday);
 
         }
 
