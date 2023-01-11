@@ -15,6 +15,9 @@ namespace BarTargu.Class
 
         public static List<Product> Cart { get; set; } = new List<Product>();
 
-
+        public static void updateAppData()
+        {
+            Context = new Entities();
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace BarTargu.WindowTar.PageTar
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Filter();
         }
 
         public void Filter()
@@ -52,7 +52,7 @@ namespace BarTargu.WindowTar.PageTar
                 allCost += (product.Cost - (product.Discount* product.Cost)) * product.QuantityInCart;
                 
             }
-            AllCostSunday = MathData.MathSunday(allCost);
+            AllCostSunday = MathData.MathSunday(allCost, DateTime.Now.DayOfWeek, DateTime.Now.Day);
             if (allCost > AllCostSunday)
             {
                 WhiteDay.Visibility = Visibility.Visible;
@@ -97,52 +97,61 @@ namespace BarTargu.WindowTar.PageTar
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-
-            SqlBase.OrderProduct orderProduct = new OrderProduct();
-            
             Random random = new Random();
-            SqlBase.Order order = new SqlBase.Order();
-            if (MessageBox.Show("Оплатить?", "Оплатить?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+           
+            if (AppData.Cart.Count == 0)
             {
-                //try
-                //{
-                    
+                MessageBox.Show("Сначала выберите блюда");
+                return;
+            }
+            else
+            {
+                if (MessageBox.Show("Оплатить?", "Оплатить?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        SqlBase.Order order = new SqlBase.Order();
                     order.TotalCost = allCost;
-                    order.TableNumID = AppData.SelectedTableNumber;
-                    order.StaffID = random.Next(1, 5);
-                     order.StatusID =1;
+                    order.TableNumID = Convert.ToInt32( AppData.SelectedTableNumber);
+                    order.StatusID = 1;
+                    order.StaffID = 1;
+                    order.OrderTime = DateTime.Now;
                     AppData.Context.Order.Add(order);
                     AppData.Context.SaveChanges();
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message.ToString());
-                //}
-
-
-                foreach (SqlBase.Product product in AppData.Cart)
+                    AppData.updateAppData();
+                }
+                    catch (Exception ex)
                 {
-
-                    //try
-                    //{
-                        orderProduct.OrderID = order.OrderID;
+                    MessageBox.Show(ex.Message.ToString());
+                }
+                var currentOrder = AppData.Context.Order.OrderByDescending(i => i.OrderTime).FirstOrDefault();
+                    foreach (SqlBase.Product product in AppData.Cart)
+                    {
+                        try
+                        {
+                            SqlBase.OrderProduct orderProduct = new OrderProduct();
+                        orderProduct.OrderID = currentOrder.OrderID;
                         orderProduct.ProductID = product.ProductID;
                         orderProduct.CountProduct = product.QuantityInCart;
                         AppData.Context.OrderProduct.Add(orderProduct);
                         AppData.Context.SaveChanges();
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.Message.ToString());
-                    //}
-                    
+                        AppData.updateAppData();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString());
+                        }
+
+                    }
+                    MessageBox.Show("Оплата совершена, заказ скоро будет");
+                    AppData.Cart = new List<Product>();
+                    AppData.SelectedTableNumber = 1;
+                    NavigationController.MainFrame.Content = new PageBorder();
+                    NavigationController.StaticMenu.Filter();                                                                                 
                 }
             }
         }
-        
            
           
     }

@@ -25,6 +25,7 @@ namespace BarTargu.SqlBase
         public int TableNumID { get; set; }
         public int StaffID { get; set; }
         public int StatusID { get; set; }
+        public System.DateTime OrderTime { get; set; }
     
         public virtual Staff Staff { get; set; }
         public virtual Status Status { get; set; }

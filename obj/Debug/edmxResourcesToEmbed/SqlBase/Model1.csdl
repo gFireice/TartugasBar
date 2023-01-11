@@ -18,6 +18,7 @@
     <Property Name="TableNumID" Type="Int32" Nullable="false" />
     <Property Name="StaffID" Type="Int32" Nullable="false" />
     <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Staff" Relationship="Self.FK_Order_Staff" FromRole="Order" ToRole="Staff" />
     <NavigationProperty Name="Status" Relationship="Self.FK_Order_Status" FromRole="Order" ToRole="Status" />
     <NavigationProperty Name="Table" Relationship="Self.FK_Order_Table" FromRole="Order" ToRole="Table" />
@@ -84,7 +85,7 @@
     <Key>
       <PropertyRef Name="TableNumID" />
     </Key>
-    <Property Name="TableNumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableNumID" Type="Int32" Nullable="false" />
     <Property Name="Number" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK_Order_Table" FromRole="Table" ToRole="Order" />

@@ -17,6 +17,7 @@
     <Property Name="TableNumID" Type="int" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="OrderTime" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderProduct">
     <Key>
@@ -73,7 +74,7 @@
     <Key>
       <PropertyRef Name="TableNumID" />
     </Key>
-    <Property Name="TableNumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableNumID" Type="int" Nullable="false" />
     <Property Name="Number" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
   </EntityType>

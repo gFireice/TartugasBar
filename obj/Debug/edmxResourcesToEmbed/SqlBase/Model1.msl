@@ -18,6 +18,7 @@
           <ScalarProperty Name="TableNumID" ColumnName="TableNumID" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
